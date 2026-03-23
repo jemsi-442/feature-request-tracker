@@ -14,7 +14,7 @@ const router = express.Router();
 router.get("/", verifyToken, adminMiddleware, async (req, res) => {
   try {
     const users = await User.findAll({
-      order: [["createdAt", "DESC"]],
+      order: [["created_at", "DESC"]],
     });
     return sendResponse(res, 200, "Users fetched", {
       users: users.map((user) => serializeUser(user)),

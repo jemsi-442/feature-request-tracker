@@ -11,8 +11,10 @@ export default function Footer({ className = "" }) {
 
   if (!isHomePage) {
     return (
-      <footer className={`mt-16 border-t border-slate-200 bg-white ${className}`}>
-        <div className="py-4 text-center text-sm text-slate-500">
+      <footer
+        className={`mt-16 border-t border-teal-950/10 bg-[linear-gradient(135deg,#0f766e_0%,#134e4a_25%,#0f172a_72%,#111827_100%)] text-white shadow-[0_-18px_40px_-30px_rgba(15,23,42,0.9)] ${className}`}
+      >
+        <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-4 text-center text-sm font-medium text-teal-50 md:px-6">
           &copy; 2026 Feature Request Tracker. All rights reserved.
         </div>
       </footer>

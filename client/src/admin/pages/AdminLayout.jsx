@@ -12,7 +12,7 @@ export default function AdminLayout() {
   if (!user) return <Navigate to="/login" replace />;
 
   return (
-    <div className="flex min-h-screen bg-slate-100 overflow-hidden">
+    <div className="flex min-h-screen bg-[linear-gradient(180deg,#dbeafe_0%,#f8fafc_18%,#e2e8f0_100%)] overflow-hidden">
       <AdminSidebar className="hidden lg:flex" />
 
       {mobileSidebarOpen ? (
@@ -33,7 +33,7 @@ export default function AdminLayout() {
 
       <div className="flex-1 flex flex-col min-w-0">
         <AdminTopbar onMenuToggle={() => setMobileSidebarOpen(true)} />
-        <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-[linear-gradient(160deg,#f8fafc_0%,#f1f5f9_100%)]">
+        <main className="flex-1 overflow-y-auto p-4 md:p-6 bg-[radial-gradient(circle_at_top,rgba(20,184,166,0.12),transparent_28%),linear-gradient(160deg,#f8fafc_0%,#eef2ff_48%,#f1f5f9_100%)]">
           <Outlet />
         </main>
         <Footer className="mt-0" />

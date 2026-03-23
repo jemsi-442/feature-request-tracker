@@ -51,6 +51,50 @@ These enhancements were added to demonstrate production-level thinking, scalabil
 
 
 
+## Screenshots
+
+Add your screenshots inside `docs/screenshots/` and keep names simple, for example:
+
+- `docs/screenshots/home-page.png`
+- `docs/screenshots/login-page.png`
+- `docs/screenshots/feature-requests-page.png`
+- `docs/screenshots/admin-dashboard.png`
+- `docs/screenshots/admin-feature-requests.png`
+- `docs/screenshots/admin-users.png`
+
+After adding them, this README will display them like this:
+
+![Home Page](docs/screenshots/home-page.png)
+![Login Page](docs/screenshots/login-page.png)
+![Feature Requests Page](docs/screenshots/feature-requests-page.png)
+![Admin Dashboard](docs/screenshots/admin-dashboard.png)
+![Admin Feature Requests](docs/screenshots/admin-feature-requests.png)
+![Admin Users](docs/screenshots/admin-users.png)
+
+## Demo Video
+
+The common GitHub approach is to upload the demo video to YouTube, Loom, or Google Drive, then place a clickable thumbnail in the README.
+
+Example:
+
+```md
+[![Watch Demo Video](docs/screenshots/demo-thumbnail.png)](https://your-video-link-here)
+```
+
+You can also add a direct link below it:
+
+```md
+Demo Video: https://your-video-link-here
+```
+
+Recommended flow:
+
+1. Capture screenshots and save them in `docs/screenshots/`.
+2. Record the demo video and upload it to YouTube, Loom, or Google Drive.
+3. Add one thumbnail image such as `docs/screenshots/demo-thumbnail.png`.
+4. Replace the demo link in this README with your real video link.
+
+
 ## Local Setup
 
 ### 1. Install dependencies

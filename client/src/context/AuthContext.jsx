@@ -3,7 +3,7 @@ import { createContext, useState, useEffect } from "react";
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(undefined);
 
   // Load user + token from localStorage on mount
   useEffect(() => {
@@ -12,11 +12,14 @@ export const AuthProvider = ({ children }) => {
       const token = localStorage.getItem("token");
       if (storedUser && token) {
         setUser({ ...JSON.parse(storedUser), token });
+      } else {
+        setUser(null);
       }
     } catch (error) {
       console.error("Failed to parse user from localStorage");
       localStorage.removeItem("user");
       localStorage.removeItem("token");
+      setUser(null);
     }
   }, []);
 

@@ -24,10 +24,11 @@ instance.interceptors.request.use(
 instance.interceptors.response.use(
   (response) => response,
   (error) => {
-    // Example: handle 401 globally
-    if (error.response && error.response.status === 401) {
+    const status = error.response?.status;
+    if (status === 401 || status === 403) {
       localStorage.removeItem("token");
-      window.location.href = "/login"; // redirect to login
+      localStorage.removeItem("user");
+      window.location.href = "/login";
     }
     return Promise.reject(error);
   }
