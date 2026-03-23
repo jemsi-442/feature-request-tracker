@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="640" viewBox="0 0 640 640" role="img" aria-label="No image">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fde2e8"/>
+      <stop offset="100%" stop-color="#fbcfe8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" fill="url(#bg)"/>
+  <g fill="none" stroke="#be185d" stroke-width="22" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M180 250h280l-24 220H204z" fill="#fff0f6"/>
+    <path d="M230 250c0-52 36-90 90-90s90 38 90 90"/>
+  </g>
+  <text x="50%" y="88%" text-anchor="middle" fill="#9d174d" font-size="28" font-family="Arial, sans-serif">Image unavailable</text>
+</svg>
