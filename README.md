@@ -75,7 +75,6 @@ After adding them, this README will display them like this:
 
 The common GitHub approach is to upload the demo video to YouTube, Loom, or Google Drive, then place a clickable thumbnail in the README.
 
-Example:
 
 ```md
 [![Watch Demo Video](docs/screenshots/demo-thumbnail.png)](https://your-video-link-here)
