@@ -12,7 +12,7 @@ const normalizeText = (value = "") => String(value).trim();
 const normalizePriority = (value = "") => String(value).trim().toLowerCase();
 const normalizeStatus = (value = "") => String(value).trim().toLowerCase();
 
-const validateFeaturePayload = (payload, { partial = false, isAdmin = false } = {}) => {
+const validateFeaturePayload = (payload, { partial = false, canUpdateStatus = false } = {}) => {
   const errors = [];
   const normalized = {};
 
@@ -46,8 +46,8 @@ const validateFeaturePayload = (payload, { partial = false, isAdmin = false } = 
   }
 
   if (payload.status !== undefined) {
-    if (!isAdmin) {
-      errors.push({ field: "status", message: "Only admins can update status" });
+    if (!canUpdateStatus) {
+      errors.push({ field: "status", message: "You are not allowed to update status" });
     } else {
       const status = normalizeStatus(payload.status);
       if (!STATUSES.includes(status)) {
@@ -71,7 +71,7 @@ const featureIncludes = [
 ];
 
 export const createFeatureRequest = asyncHandler(async (req, res) => {
-  const payload = validateFeaturePayload(req.body, { isAdmin: req.user?.role === "admin" });
+  const payload = validateFeaturePayload(req.body, { canUpdateStatus: req.user?.role === "admin" });
 
   const featureRequest = await FeatureRequest.create({
     ...payload,
@@ -145,7 +145,7 @@ export const updateFeatureRequest = asyncHandler(async (req, res) => {
 
   const payload = validateFeaturePayload(req.body, {
     partial: true,
-    isAdmin,
+    canUpdateStatus: isAdmin || isOwner,
   });
 
   Object.assign(featureRequest, payload, { updatedBy: req.user._id });
@@ -160,6 +160,13 @@ export const deleteFeatureRequest = asyncHandler(async (req, res) => {
 
   if (!featureRequest) {
     throw new ApiError(404, "Feature request not found");
+  }
+
+  const isAdmin = req.user?.role === "admin";
+  const isOwner = String(featureRequest.createdBy) === String(req.user?._id);
+
+  if (!isAdmin && !isOwner) {
+    throw new ApiError(403, "You are not allowed to delete this feature request");
   }
 
   await featureRequest.destroy();
