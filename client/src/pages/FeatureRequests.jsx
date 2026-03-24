@@ -121,7 +121,13 @@ export default function FeatureRequests() {
         return;
       }
 
-      const { data } = await api.post("/feature-requests", form);
+      const createPayload = {
+        title: form.title,
+        description: form.description,
+        priority: form.priority,
+      };
+
+      const { data } = await api.post("/feature-requests", createPayload);
       const created = extractOne(data);
       setFeatureRequests((prev) => [created, ...prev]);
       resetForm();
