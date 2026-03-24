@@ -71,29 +71,6 @@ After adding them, this README will display them like this:
 ![Admin Feature Requests](docs/screenshots/admin-feature-requests.png)
 ![Admin Users](docs/screenshots/admin-users.png)
 
-## Demo Video
-
-The common GitHub approach is to upload the demo video to YouTube, Loom, or Google Drive, then place a clickable thumbnail in the README.
-
-
-```md
-[![Watch Demo Video](docs/screenshots/demo-thumbnail.png)](https://your-video-link-here)
-```
-
-You can also add a direct link below it:
-
-```md
-Demo Video: https://your-video-link-here
-```
-
-Recommended flow:
-
-1. Capture screenshots and save them in `docs/screenshots/`.
-2. Record the demo video and upload it to YouTube, Loom, or Google Drive.
-3. Add one thumbnail image such as `docs/screenshots/demo-thumbnail.png`.
-4. Replace the demo link in this README with your real video link.
-
-
 ## Local Setup
 
 ### 1. Install dependencies
